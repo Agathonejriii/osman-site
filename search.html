@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Results - OSMAN OMUKIKUYU TUNES & UPDATES</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<style>
+  :root{--lime:#7CC200;--orange:#FF6B1A;--pink:#FF2D78;--purple:#7B2FFF;--teal:#00B8AE;--dark:#2A2A3A;--darker:#F0F2F8;--card:#FFFFFF;--card2:#E8EAF2;--text:#1A1A2E;--muted:#666;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--darker);color:var(--text);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+  nav{background:#fff;border-bottom:3px solid var(--lime);position:sticky;top:0;z-index:100;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .logo{display:block;height:48px;width:auto;padding:6px 0;}
+  .logo-footer{height:56px;width:auto;display:block;margin-bottom:8px;}
+  .nav-links{display:flex;gap:4px;flex-wrap:wrap;list-style:none;}
+  .nav-links a{display:block;padding:8px 12px;font-size:0.8rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);text-decoration:none;border-radius:4px;transition:background 0.2s,color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{background:var(--lime);color:#fff;}
+  .nav-search{display:flex;}
+  .nav-search input{background:#f0f2f8;border:1.5px solid #ccc;color:var(--text);padding:6px 12px;border-radius:6px 0 0 6px;font-size:0.82rem;outline:none;width:160px;font-family:'Nunito',sans-serif;}
+  .nav-search button{background:var(--lime);color:#fff;border:none;padding:6px 14px;border-radius:0 6px 6px 0;cursor:pointer;font-weight:800;font-size:0.82rem;}
+  .page-banner{background:linear-gradient(135deg,#7cc20015,#00b8ae15);border-bottom:4px solid var(--lime);padding:40px 24px;text-align:center;}
+  .page-banner h1{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--dark);}
+  .page-banner p{color:var(--muted);margin-top:6px;font-size:0.95rem;}
+  .main-layout{max-width:1200px;margin:0 auto;padding:40px 24px;}
+  .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+  .article-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #e0e0ee;transition:transform 0.3s;text-decoration:none;color:inherit;display:block;}
+  .article-card:hover{transform:translateY(-4px);}
+  .card-img{height:150px;background-size:cover;background-position:center;background-color:#ede8f5;}
+  .card-body{padding:14px;}
+  .cat-tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.68rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+  .tag-ent{background:var(--pink);color:#fff;}.tag-sports{background:var(--lime);color:#fff;}.tag-music{background:var(--purple);color:#fff;}.tag-gossip{background:var(--orange);color:#fff;}.tag-politics{background:var(--teal);color:#fff;}
+  .card-meta{margin-top:10px;padding-top:8px;border-top:1px solid #eee;display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);}
+  .card-meta strong{color:#444;}
+  .skeleton{background:linear-gradient(90deg,#e0e0ee 25%,#f0f0f8 50%,#e0e0ee 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:8px;}
+  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+  .sk-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #e0e0ee;}
+  .sk-img{height:150px;}.sk-body{padding:14px;}.sk-line{height:13px;margin-bottom:8px;border-radius:6px;}
+  .error-state{background:#fff5f5;border:1px solid #ffcccc;border-radius:10px;padding:20px;color:#cc3333;font-size:0.85rem;text-align:center;grid-column:1/-1;}
+  .empty-state{background:var(--card);border:1px solid #e0e0ee;border-radius:12px;padding:40px 20px;text-align:center;grid-column:1/-1;color:var(--muted);}
+  .empty-state strong{color:var(--text);display:block;font-size:1.1rem;margin-bottom:6px;}
+  footer{background:#2A2A3A;padding:30px 24px 16px;margin-top:20px;}
+  .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+  .social-links{display:flex;gap:8px;}
+  .social-btn{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer;transition:transform 0.2s;color:#fff;font-weight:800;text-decoration:none;}
+  .social-btn:hover{transform:scale(1.1);}
+  .s-fb{background:#1877F2;}.s-tw{background:#1DA1F2;}.s-ig{background:linear-gradient(135deg,#E1306C,#833AB4);}.s-wa{background:#25D366;}
+  @media(max-width:768px){.articles-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html"><img src="images/logo.jpg" alt="Osman OMukikuyu Tunes" class="logo"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="entertainment.html">Entertainment</a></li>
+    <li><a href="sports.html">Sports</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="gossip.html">Gossip</a></li>
+    <li><a href="politics.html">Politics</a></li>
+  </ul>
+  <div class="nav-search">
+    <input type="text" id="globalSearch" placeholder="Search…">
+    <button onclick="doSearch()">GO</button>
+  </div>
+</nav>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <h1 id="searchTitle">Search Results</h1>
+  <p id="searchSubtitle"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-layout">
+  <div class="articles-grid" id="resultsGrid">
+    <div class="sk-card"><div class="skeleton sk-img"></div><div class="sk-body"><div class="skeleton sk-line" style="width:80%;"></div><div class="skeleton sk-line" style="height:40px;"></div></div></div>
+    <div class="sk-card"><div class="skeleton sk-img"></div><div class="sk-body"><div class="skeleton sk-line" style="width:80%;"></div><div class="skeleton sk-line" style="height:40px;"></div></div></div>
+    <div class="sk-card"><div class="skeleton sk-img"></div><div class="sk-body"><div class="skeleton sk-line" style="width:80%;"></div><div class="skeleton sk-line" style="height:40px;"></div></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 OSMAN OMUKIKUYU TUNES & UPDATES. Made in Uganda 🇺🇬</span>
+    <div class="social-links">
+      <a class="social-btn s-fb" href="#">f</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+      <a class="social-btn s-ig" href="#">📷</a>
+      <a class="social-btn s-wa" href="#">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function timeAgo(dateStr) {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  if (seconds < 60) return `${seconds} sec ago`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)} min ago`;
+  if (seconds < 86400) return `${Math.floor(seconds / 3600)} hrs ago`;
+  return `${Math.floor(seconds / 86400)} days ago`;
+}
+
+const CATEGORY_META = {
+  entertainment: { tagClass: 'tag-ent', label: 'Entertainment' },
+  sports:        { tagClass: 'tag-sports', label: 'Sports' },
+  music:         { tagClass: 'tag-music', label: 'Music' },
+  gossip:        { tagClass: 'tag-gossip', label: 'Gossip' },
+  politics:      { tagClass: 'tag-politics', label: 'Politics' },
+};
+
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name) || '';
+}
+
+function matchesQuery(article, terms) {
+  const haystack = `${article.title || ''} ${article.description || ''}`.toLowerCase();
+  return terms.every(term => haystack.includes(term));
+}
+
+function createResultCard(article, category) {
+  const meta = CATEGORY_META[category] || { tagClass: '', label: category };
+  const imageHtml = article.urlToImage
+    ? `<div class="card-img" style="background-image:url('${article.urlToImage}');"></div>`
+    : `<div class="card-img" style="display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg,#ede8f5,#e8f5f4);">📰</div>`;
+
+  return `
+    <a class="article-card" href="${article.url}" target="_blank" rel="noopener">
+      ${imageHtml}
+      <div class="card-body">
+        <span class="cat-tag ${meta.tagClass}">${meta.label}</span>
+        <h3 style="font-size:0.92rem;font-weight:800;margin-bottom:6px;">${escapeHtml(article.title)}</h3>
+        <p style="font-size:0.78rem;color:var(--muted);">${article.description ? escapeHtml(article.description.substring(0, 100)) + '…' : ''}</p>
+        <div class="card-meta">
+          <strong>${escapeHtml(article.source.name)}</strong>
+          <span>${timeAgo(article.publishedAt)}</span>
+        </div>
+      </div>
+    </a>
+  `;
+}
+
+async function runSearch() {
+  const q = getQueryParam('q').trim();
+  const grid = document.getElementById('resultsGrid');
+  const title = document.getElementById('searchTitle');
+  const subtitle = document.getElementById('searchSubtitle');
+
+  if (!q) {
+    title.textContent = 'Search';
+    subtitle.textContent = 'Type something in the search box above to get started.';
+    grid.innerHTML = '';
+    return;
+  }
+
+  title.textContent = `Results for "${q}"`;
+  subtitle.textContent = 'Searching across Entertainment, Sports, Music, Gossip and Politics…';
+
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  const categories = ['entertainment', 'sports', 'music', 'gossip', 'politics'];
+
+  try {
+    const responses = await Promise.allSettled(
+      categories.map(cat => fetch(`/.netlify/functions/news?category=${cat}`).then(r => r.json()))
+    );
+
+    let matches = [];
+    responses.forEach((res, i) => {
+      if (res.status === 'fulfilled') {
+        const articles = res.value.articles || [];
+        articles.forEach(a => {
+          if (matchesQuery(a, terms)) {
+            matches.push({ article: a, category: categories[i] });
+          }
+        });
+      }
+    });
+
+    // newest first
+    matches.sort((a, b) => new Date(b.article.publishedAt) - new Date(a.article.publishedAt));
+
+    subtitle.textContent = matches.length
+      ? `Found ${matches.length} result${matches.length === 1 ? '' : 's'}.`
+      : '';
+
+    if (!matches.length) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <strong>No results found for "${escapeHtml(q)}"</strong>
+          This searches recent headlines only. Try a different word, or check back later as new stories come in.
+        </div>
+      `;
+      return;
+    }
+
+    grid.innerHTML = matches.map(m => createResultCard(m.article, m.category)).join('');
+
+  } catch (error) {
+    console.error('Search error:', error);
+    grid.innerHTML = '<div class="error-state">⚠️ Could not complete search. Please try again later.</div>';
+  }
+}
+
+function doSearch() {
+  const q = document.getElementById('globalSearch')?.value.trim();
+  if (q) window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+}
+
+// Pre-fill the search box with the current query, if any
+document.addEventListener('DOMContentLoaded', () => {
+  const q = getQueryParam('q');
+  const input = document.getElementById('globalSearch');
+  if (q && input) input.value = q;
+});
+
+runSearch();
+</script>
+</body>
+</html>

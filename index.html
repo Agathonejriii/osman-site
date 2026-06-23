@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSMAN OMUKIKUYU TUNES & UPDATES</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<style>
+  :root{--lime:#7CC200;--orange:#FF6B1A;--pink:#FF2D78;--purple:#7B2FFF;--teal:#00B8AE;--dark:#2A2A3A;--darker:#F0F2F8;--card:#FFFFFF;--card2:#E8EAF2;--text:#1A1A2E;--muted:#666;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--darker);color:var(--text);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+  .ticker-wrap{background:var(--orange);overflow:hidden;white-space:nowrap;padding:6px 0;}
+  .ticker-track{display:inline-block;animation:ticker 60s linear infinite;font-size:0.78rem;font-weight:700;color:#fff;}
+  .ticker-track span{margin:0 40px;}.ticker-track span::before{content:"◆ ";color:rgba(255,255,255,0.5);}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  nav{background:#fff;border-bottom:3px solid var(--lime);position:sticky;top:0;z-index:100;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .logo{display:block;height:100px;width:auto;padding:6px 0;}
+  .logo-footer{height:80px;width:auto;display:block;margin-bottom:8px;}
+  .nav-links{display:flex;gap:4px;flex-wrap:wrap;list-style:none;}
+  .nav-links a{display:block;padding:8px 12px;font-size:0.8rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);text-decoration:none;border-radius:4px;transition:background 0.2s,color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{background:var(--lime);color:#fff;}
+  .nav-search{display:flex;}
+  .nav-search input{background:#f0f2f8;border:1.5px solid #ccc;color:var(--text);padding:6px 12px;border-radius:6px 0 0 6px;font-size:0.82rem;outline:none;width:160px;font-family:'Nunito',sans-serif;}
+  .nav-search button{background:var(--lime);color:#fff;border:none;padding:6px 14px;border-radius:0 6px 6px 0;cursor:pointer;font-weight:800;font-size:0.82rem;}
+  .hero{background:linear-gradient(135deg,#e8eaf2,#ede8f5,#e8f5f4);padding:40px 24px 30px;position:relative;overflow:hidden;}
+  .hero::before{content:'TWEAKLIT';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,15vw,200px);color:rgba(0,0,0,0.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
+  .hero-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;gap:16px;}
+  .hero-main{grid-column:1/3;grid-row:1/3;border-radius:16px;overflow:hidden;position:relative;min-height:380px;cursor:pointer;transition:transform 0.3s;background:linear-gradient(160deg,#ede8f5,#e8f5f4);}
+  .hero-main:hover{transform:scale(1.01);}
+  .hero-img-bg{position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover;background-position:center;transition:transform 0.4s;}
+  .hero-main:hover .hero-img-bg{transform:scale(1.03);}
+  .hero-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(255,255,255,0.96));padding:24px;}
+  .hero-side{border-radius:12px;overflow:hidden;background:var(--card);position:relative;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;min-height:175px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid #e0e0ee;}
+  .hero-side:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+  .hero-side-img{height:90px;background-size:cover;background-position:center;background-color:#ede8f5;}
+  .hero-side-body{padding:12px;}
+  .cat-tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.68rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+  .tag-ent{background:var(--pink);color:#fff;}.tag-sports{background:var(--lime);color:#fff;}.tag-music{background:var(--purple);color:#fff;}.tag-gossip{background:var(--orange);color:#fff;}.tag-politics{background:var(--teal);color:#fff;}
+  .content-section{max-width:1200px;margin:0 auto;padding:36px 24px;}
+  .section-heading{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .section-heading h2{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.05em;}
+  .section-heading .bar{flex:1;height:3px;background:linear-gradient(90deg,var(--lime),transparent);}
+  .section-heading a{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--lime);text-decoration:none;border:1.5px solid var(--lime);padding:4px 12px;border-radius:4px;transition:all 0.2s;}
+  .section-heading a:hover{background:var(--lime);color:#fff;}
+  .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;}
+  .news-card{background:var(--card);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;border:1px solid #e0e0ee;text-decoration:none;color:inherit;display:block;}
+  .news-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.1);}
+  .news-card-img{height:160px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+  .ci-ent{background:linear-gradient(135deg,#ff2d7820,#7b2fff20);}.ci-sports{background:linear-gradient(135deg,#7cc20025,#00b8ae25);}.ci-music{background:linear-gradient(135deg,#7b2fff20,#ff2d7820);}.ci-gossip{background:linear-gradient(135deg,#ff6b1a20,#ff2d7820);}.ci-politics{background:linear-gradient(135deg,#00b8ae20,#7b2fff20);}
+  .news-card .card-body{padding:14px;}
+  .news-card h3{font-size:0.92rem;font-weight:800;line-height:1.4;margin-bottom:8px;}
+  .news-card p{font-size:0.8rem;color:var(--muted);line-height:1.5;}
+  .card-meta{margin-top:10px;padding-top:8px;border-top:1px solid #eee;display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);}
+  .card-meta strong{color:#444;}
+  
+  /* SCORES SECTION - Enhanced Grid */
+  .scores-bar{background:var(--dark);padding:20px 24px;}
+  .scores-title{max-width:1200px;margin:0 auto 15px auto;display:flex;justify-content:space-between;align-items:center;}
+  .scores-title h3{color:var(--lime);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.05em;}
+  .refresh-scores{background:var(--lime);border:none;padding:5px 12px;border-radius:20px;font-size:0.7rem;font-weight:800;cursor:pointer;color:#1A1A2E;}
+  .scores-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+  .score-card{background:#3a3a4a;border-radius:12px;padding:12px 16px;border-left:4px solid var(--lime);cursor:pointer;transition:transform 0.2s,background 0.2s;}
+  .score-card:hover{transform:translateY(-2px);background:#4a4a5a;}
+  .score-card .league{font-size:0.7rem;font-weight:800;text-transform:uppercase;color:var(--lime);margin-bottom:8px;letter-spacing:0.05em;}
+  .score-card .match{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .score-card .home-team,.score-card .away-team{font-size:0.85rem;font-weight:700;color:#fff;}
+  .score-card .score{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--lime);font-weight:800;}
+  .score-card .status{font-size:0.65rem;color:#aaa;display:flex;justify-content:space-between;margin-top:6px;}
+  .score-card .date{font-size:0.6rem;color:#888;}
+  .no-scores{color:#888;text-align:center;padding:20px;grid-column:1/-1;}
+  .sports-wrap{background:linear-gradient(180deg,#f0f2f8,#e8f5e8,#f0f2f8);}
+  .music-wrap{background:linear-gradient(180deg,#f0f2f8,#ede8f5,#f0f2f8);}
+  .spotify-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+  .hot100-card{background:#1e1e2e;border-radius:12px;padding:16px;border:1px solid #3a3a4a;}
+  .hot100-card-header{color:var(--lime);font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;}
+  .hot100-row{display:flex;align-items:center;gap:10px;padding:7px 0;text-decoration:none;border-bottom:1px solid #2e2e3e;}
+  .hot100-row:last-of-type{border-bottom:none;}
+  .hot100-rank{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--lime);width:22px;flex-shrink:0;}
+  .hot100-info{display:flex;flex-direction:column;overflow:hidden;}
+  .hot100-title{font-size:0.82rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .hot100-artist{font-size:0.7rem;color:#999;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .hot100-footer{margin-top:10px;padding-top:8px;border-top:1px solid #3a3a4a;font-size:0.65rem;color:#888;text-align:center;}
+  .gp-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .skeleton{background:linear-gradient(90deg,#e0e0ee 25%,#f0f0f8 50%,#e0e0ee 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:8px;}
+  @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+  .sk-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #e0e0ee;}
+  .sk-img{height:160px;}.sk-body{padding:14px;}.sk-line{height:13px;margin-bottom:8px;border-radius:6px;}
+  .error-state{background:#fff5f5;border:1px solid #ffcccc;border-radius:10px;padding:20px;color:#cc3333;font-size:0.85rem;text-align:center;grid-column:1/-1;}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,#ccc,transparent);max-width:1200px;margin:0 auto;}
+  footer{background:#2A2A3A;padding:30px 24px 16px;margin-top:20px;}
+  .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:24px;}
+  .footer-brand p{font-size:0.82rem;color:#aaa;line-height:1.6;margin-top:8px;}
+  .footer-col h4{font-size:0.72rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--lime);margin-bottom:10px;}
+  .footer-col a{display:block;font-size:0.82rem;color:#aaa;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid #3a3a4a;padding-top:14px;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+  .social-links{display:flex;gap:8px;}
+  .social-btn{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:pointer;transition:transform 0.2s;color:#fff;font-weight:800;text-decoration:none;}
+  .social-btn:hover{transform:scale(1.1);}
+  .s-fb{background:#1877F2;}.s-tw{background:#1DA1F2;}.s-ig{background:linear-gradient(135deg,#E1306C,#833AB4);}.s-wa{background:#25D366;}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr;}.hero-main{grid-column:1;min-height:260px;}.gp-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack">
+    <span>🔥 TweakLit – Loading fresh news...</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html"><img src="images/logo.jpg" alt="Osman OMukikuyu Tunes" class="logo"></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="entertainment.html">Entertainment</a></li>
+    <li><a href="sports.html">Sports</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="gossip.html">Gossip</a></li>
+    <li><a href="politics.html">Politics</a></li>
+  </ul>
+  <div class="nav-search">
+    <input type="text" id="globalSearch" placeholder="Search…">
+    <button onclick="doSearch()">GO</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid" id="heroGrid">
+    <div class="hero-main sk-card" style="grid-column:1/3;grid-row:1/3;"><div class="skeleton sk-img" style="height:100%;min-height:380px;"></div></div>
+    <div class="hero-side sk-card"><div class="skeleton sk-img" style="height:175px;"></div></div>
+    <div class="hero-side sk-card"><div class="skeleton sk-img" style="height:175px;"></div></div>
+    <div class="hero-side sk-card"><div class="skeleton sk-img" style="height:175px;"></div></div>
+  </div>
+</section>
+
+<!-- LIVE SCORES SECTION - Diverse Results -->
+<div class="scores-bar">
+  <div class="scores-title">
+    <h3>📊 RECENT MATCH RESULTS</h3>
+    <button class="refresh-scores" onclick="refreshScores()">⟳ Refresh</button>
+  </div>
+  <div class="scores-grid" id="scoresGrid">
+    <div class="no-scores">Loading match results...</div>
+  </div>
+</div>
+
+<!-- ENTERTAINMENT -->
+<section class="content-section">
+  <div class="section-heading">
+    <h2>🎬 Entertainment</h2>
+    <div class="bar"></div>
+    <a href="entertainment.html">View All</a>
+  </div>
+  <div class="news-grid" id="entGrid"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SPORTS -->
+<section class="sports-wrap">
+  <div class="content-section">
+    <div class="section-heading">
+      <h2>⚽ Sports</h2>
+      <div class="bar"></div>
+      <a href="sports.html">View All</a>
+    </div>
+    <div class="news-grid" id="sportsGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MUSIC -->
+<section class="music-wrap">
+  <div class="content-section">
+    <div class="section-heading">
+      <h2>🎵 Music</h2>
+      <div class="bar" style="background:linear-gradient(90deg,var(--purple),transparent)"></div>
+      <a href="music.html">View All</a>
+    </div>
+    <div class="news-grid" id="musicGrid"></div>
+    <div class="spotify-grid" style="margin-top:20px;" id="spotifyGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GOSSIP & POLITICS -->
+<section class="content-section">
+  <div class="gp-grid">
+    <div>
+      <div class="section-heading">
+        <h2>💄 Gossip</h2>
+        <div class="bar" style="background:linear-gradient(90deg,var(--orange),transparent)"></div>
+        <a href="gossip.html">View All</a>
+      </div>
+      <div class="news-grid" id="gossipGrid" style="grid-template-columns:1fr;"></div>
+    </div>
+    <div>
+      <div class="section-heading">
+        <h2>🏛️ Politics</h2>
+        <div class="bar" style="background:linear-gradient(90deg,var(--teal),transparent)"></div>
+        <a href="politics.html">View All</a>
+      </div>
+      <div class="news-grid" id="politicsGrid" style="grid-template-columns:1fr;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html"><img src="images/logo.jpg" alt="Osman OMukikuyu Tunes" class="logo-footer"></a>
+      <p>Uganda's most vibrant destination for real-time entertainment, sports, music, celebrity gossip and politics.</p>
+    </div>
+    <div class="footer-col"><h4>Sections</h4><a href="entertainment.html">Entertainment</a><a href="sports.html">Sports</a><a href="music.html">Music</a><a href="gossip.html">Gossip</a><a href="politics.html">Politics</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Contact</a></div>
+    <div class="footer-col"><h4>Data Sources</h4><a href="#" target="_blank">Live News Feed</a><a href="https://spotify.com" target="_blank">Spotify</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 OSMAN OMUKIKUYU TUNES & UPDATES. Made in Uganda 🇺🇬</span>
+    <div class="social-links">
+      <a class="social-btn s-fb" href="#">f</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+      <a class="social-btn s-ig" href="#">📷</a>
+      <a class="social-btn s-wa" href="#">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// TweakLit — Homepage with Diverse Sports Scores
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function timeAgo(dateStr) {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  if (seconds < 60) return `${seconds} sec ago`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)} min ago`;
+  if (seconds < 86400) return `${Math.floor(seconds / 3600)} hrs ago`;
+  return `${Math.floor(seconds / 86400)} days ago`;
+}
+
+function createCard(article, tagClass, tagLabel, category) {
+  const imageHtml = article.urlToImage 
+    ? `<div class="news-card-img" style="background-image:url('${article.urlToImage}');background-size:cover;background-position:center;height:160px;"></div>`
+    : `<div class="news-card-img ci-${category}" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">📰</div>`;
+  
+  return `
+    <a class="news-card" href="${article.url}" target="_blank" rel="noopener">
+      ${imageHtml}
+      <div class="card-body">
+        <span class="cat-tag ${tagClass}">${tagLabel}</span>
+        <h3>${escapeHtml(article.title)}</h3>
+        <p>${article.description ? escapeHtml(article.description.substring(0, 100)) + '…' : ''}</p>
+        <div class="card-meta">
+          <strong>${escapeHtml(article.source.name)}</strong>
+          <span>${timeAgo(article.publishedAt)}</span>
+        </div>
+      </div>
+    </a>
+  `;
+}
+
+// LIVE MATCH RESULT HEADLINES - pulled from Uganda sports RSS feeds via Netlify function
+function timeAgoShort(dateStr) {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  if (seconds < 60) return `${seconds}s ago`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+  if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+  return `${Math.floor(seconds / 86400)}d ago`;
+}
+
+async function loadScores() {
+  const scoresGrid = document.getElementById('scoresGrid');
+  if (!scoresGrid) return;
+
+  scoresGrid.innerHTML = '<div class="no-scores">📊 Loading match results...</div>';
+
+  try {
+    const res = await fetch('/.netlify/functions/results');
+    const data = await res.json();
+    const matches = data.matches || [];
+
+    if (!matches.length) {
+      scoresGrid.innerHTML = '<div class="no-scores">No recent match results found. Check back soon.</div>';
+      return;
+    }
+
+    scoresGrid.innerHTML = matches.map(m => `
+      <a class="score-card" href="${m.url}" target="_blank" rel="noopener">
+        <div class="league">${m.league}</div>
+        <div class="result-title">${escapeHtml(m.title)}</div>
+        <div class="status">
+          <span>${escapeHtml(m.source)}</span>
+          <span class="date">${timeAgoShort(m.publishedAt)}</span>
+        </div>
+      </a>
+    `).join('');
+
+  } catch (error) {
+    console.error('Error loading match results:', error);
+    scoresGrid.innerHTML = '<div class="no-scores">⚠️ Unable to load results. Please try again later.</div>';
+  }
+}
+
+function refreshScores() {
+  loadScores();
+  const btn = document.querySelector('.refresh-scores');
+  if (btn) {
+    const originalText = btn.textContent;
+    btn.textContent = '⟳ Refreshing...';
+    setTimeout(() => { btn.textContent = originalText; }, 1500);
+  }
+}
+
+// HOWWE HOT 100 - replaces the old fake Spotify playlist embeds
+async function loadHot100() {
+  const grid = document.getElementById('spotifyGrid');
+  if (!grid) return;
+
+  grid.innerHTML = '<div class="no-scores">🎵 Loading Howwe Hot 100…</div>';
+
+  try {
+    const res = await fetch('/.netlify/functions/hot100');
+    const data = await res.json();
+    const songs = data.songs || [];
+
+    if (!songs.length) {
+      grid.innerHTML = '<div class="no-scores">Chart unavailable right now. Check back soon.</div>';
+      return;
+    }
+
+    // Show top 9 songs as 3 cards of 3 each, mirroring the old 3-card layout
+    const chunkSize = 3;
+    const chunks = [];
+    for (let i = 0; i < 9 && i < songs.length; i += chunkSize) {
+      chunks.push(songs.slice(i, i + chunkSize));
+    }
+
+    grid.innerHTML = chunks.map((chunk, idx) => `
+      <div class="hot100-card">
+        <div class="hot100-card-header">🔥 Howwe Hot 100 ${idx === 0 ? '· Top Songs' : `· #${idx * chunkSize + 1}-${idx * chunkSize + chunk.length}`}</div>
+        ${chunk.map(s => `
+          <a class="hot100-row" href="${s.url}" target="_blank" rel="noopener">
+            <span class="hot100-rank">${s.rank}</span>
+            <span class="hot100-info">
+              <span class="hot100-title">${escapeHtml(s.title)}</span>
+              <span class="hot100-artist">${escapeHtml(s.artist)}</span>
+            </span>
+          </a>
+        `).join('')}
+        <div class="hot100-footer">Howwe Hot 100 Chart</div>
+      </div>
+    `).join('');
+
+  } catch (error) {
+    console.error('Error loading Hot 100:', error);
+    grid.innerHTML = '<div class="no-scores">⚠️ Unable to load chart. Please try again later.</div>';
+  }
+}
+
+async function loadAllNews() {
+  console.log('Loading fresh news...');
+  
+  const entGrid = document.getElementById('entGrid');
+  const sportsGrid = document.getElementById('sportsGrid');
+  const musicGrid = document.getElementById('musicGrid');
+  const gossipGrid = document.getElementById('gossipGrid');
+  const politicsGrid = document.getElementById('politicsGrid');
+  const heroGrid = document.getElementById('heroGrid');
+  
+  try {
+    const [entertainment, sports, music, gossip, politics] = await Promise.all([
+      fetch('/.netlify/functions/news?category=entertainment').then(r => r.json()),
+      fetch('/.netlify/functions/news?category=sports').then(r => r.json()),
+      fetch('/.netlify/functions/news?category=music').then(r => r.json()),
+      fetch('/.netlify/functions/news?category=gossip').then(r => r.json()),
+      fetch('/.netlify/functions/news?category=politics').then(r => r.json())
+    ]);
+    
+    const entArticles = entertainment.articles || [];
+    const sportsArticles = sports.articles || [];
+    const musicArticles = music.articles || [];
+    const gossipArticles = gossip.articles || [];
+    const politicsArticles = politics.articles || [];
+    
+    console.log('✅ Entertainment:', entArticles.length);
+    console.log('✅ Sports:', sportsArticles.length);
+    console.log('✅ Music:', musicArticles.length);
+    console.log('✅ Gossip:', gossipArticles.length);
+    console.log('✅ Politics:', politicsArticles.length);
+    
+    if (entGrid && entArticles.length) entGrid.innerHTML = entArticles.slice(0, 3).map(a => createCard(a, 'tag-ent', 'Entertainment', 'ent')).join('');
+    if (sportsGrid && sportsArticles.length) sportsGrid.innerHTML = sportsArticles.slice(0, 3).map(a => createCard(a, 'tag-sports', 'Sports', 'sports')).join('');
+    if (musicGrid && musicArticles.length) musicGrid.innerHTML = musicArticles.slice(0, 3).map(a => createCard(a, 'tag-music', 'Music', 'music')).join('');
+    if (gossipGrid && gossipArticles.length) gossipGrid.innerHTML = gossipArticles.slice(0, 2).map(a => createCard(a, 'tag-gossip', 'Gossip', 'gossip')).join('');
+    if (politicsGrid && politicsArticles.length) politicsGrid.innerHTML = politicsArticles.slice(0, 2).map(a => createCard(a, 'tag-politics', 'Politics', 'politics')).join('');
+    
+    if (entArticles.length && heroGrid) {
+      const main = entArticles[0];
+      const imageStyle = main.urlToImage ? `background-image:url('${main.urlToImage}');background-size:cover;background-position:center;` : 'background:linear-gradient(160deg,#ede8f5,#e8f5f4);';
+      heroGrid.innerHTML = `
+        <div class="hero-main" style="grid-column:1/3;grid-row:1/3;" onclick="window.open('${main.url}','_blank')">
+          <div class="hero-img-bg" style="${imageStyle}height:100%;"></div>
+          <div class="hero-overlay">
+            <span class="cat-tag tag-ent">Top Story</span>
+            <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.2rem,2.5vw,1.9rem);line-height:1.3;color:var(--text);margin-bottom:8px;">${escapeHtml(main.title)}</h2>
+            <p style="color:#555;font-size:0.85rem;">${main.description ? escapeHtml(main.description.substring(0, 130)) + '…' : ''}</p>
+          </div>
+        </div>
+        ${entArticles.slice(1, 4).map((a, i) => `
+          <div class="hero-side" onclick="window.open('${a.url}','_blank')">
+            <div class="hero-side-img" style="${a.urlToImage ? `background-image:url('${a.urlToImage}');` : ''}background-size:cover;background-position:center;height:90px;background-color:#ede8f5;"></div>
+            <div class="hero-side-body">
+              <span class="cat-tag tag-ent">Trending</span>
+              <div style="font-size:0.85rem;font-weight:800;color:var(--text);line-height:1.3;">${escapeHtml(a.title.substring(0, 70))}${a.title.length > 70 ? '…' : ''}</div>
+            </div>
+          </div>
+        `).join('')}
+      `;
+      
+      const allFresh = [...entArticles, ...sportsArticles, ...musicArticles, ...politicsArticles];
+      const tickerItems = allFresh.slice(0, 8).map(a => `<span>🔥 ${escapeHtml(a.title)}</span>`).join('');
+      const tickerTrack = document.getElementById('tickerTrack');
+      if (tickerTrack) tickerTrack.innerHTML = tickerItems + tickerItems;
+    }
+    
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+function doSearch() {
+  const q = document.getElementById('globalSearch')?.value.trim();
+  if (q) window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+}
+
+loadAllNews();
+loadScores();
+loadHot100();
+
+// Auto-refresh scores every 3 minutes
+setInterval(loadScores, 180000);
+// Refresh chart every 15 minutes (matches function's own cache window)
+setInterval(loadHot100, 900000);
+</script>
+</body>
+</html>

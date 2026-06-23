@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>Testing GNews API</h1>
+    <div id="result">Loading...</div>
+
+    <script>
+    // 👇 REPLACE WITH YOUR ACTUAL API KEY
+    const API_KEY = "6db97f7a85235b75c50a1598215f4039";
+    
+    async function testAPI() {
+        const url = `https://gnews.io/api/v4/search?q=Uganda&lang=en&max=5&apikey=${API_KEY}`;
+        
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            const resultDiv = document.getElementById('result');
+            
+            if (data.articles && data.articles.length > 0) {
+                resultDiv.innerHTML = `
+                    <h2>✅ API WORKING! Found ${data.articles.length} articles</h2>
+                    <ul>
+                        ${data.articles.map(a => `<li>${a.title}</li>`).join('')}
+                    </ul>
+                `;
+            } else {
+                resultDiv.innerHTML = `<p style="color:red">❌ No articles found. Response: ${JSON.stringify(data)}</p>`;
+            }
+        } catch (error) {
+            document.getElementById('result').innerHTML = `<p style="color:red">❌ Error: ${error.message}</p>`;
+        }
+    }
+    
+    testAPI();
+    </script>
+</body>
+</html>

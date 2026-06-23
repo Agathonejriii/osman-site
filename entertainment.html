@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entertainment – TweakLit</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<style>
+  /* Copy all styles from index.html here */
+  :root{--lime:#7CC200;--orange:#FF6B1A;--pink:#FF2D78;--purple:#7B2FFF;--teal:#00B8AE;--dark:#2A2A3A;--darker:#F0F2F8;--card:#FFFFFF;--card2:#E8EAF2;--text:#1A1A2E;--muted:#666;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--darker);color:var(--text);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+  nav{background:#fff;border-bottom:3px solid var(--lime);position:sticky;top:0;z-index:100;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:0.05em;line-height:1;padding:10px 0;background:linear-gradient(90deg,var(--lime),var(--teal),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
+  .nav-links{display:flex;gap:4px;flex-wrap:wrap;list-style:none;}
+  .nav-links a{display:block;padding:8px 12px;font-size:0.8rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);text-decoration:none;border-radius:4px;transition:background 0.2s,color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{background:var(--lime);color:#fff;}
+  .nav-search{display:flex;}
+  .nav-search input{background:#f0f2f8;border:1.5px solid #ccc;color:var(--text);padding:6px 12px;border-radius:6px 0 0 6px;font-size:0.82rem;outline:none;width:160px;font-family:'Nunito',sans-serif;}
+  .nav-search button{background:var(--lime);color:#fff;border:none;padding:6px 14px;border-radius:0 6px 6px 0;cursor:pointer;font-weight:800;font-size:0.82rem;}
+  .page-banner{background:linear-gradient(135deg,#ff2d7815,#7b2fff15);border-bottom:4px solid var(--pink);padding:40px 24px;text-align:center;}
+  .page-banner h1{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--pink);}
+  .main-layout{max-width:1200px;margin:0 auto;padding:40px 24px;}
+  .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+  .article-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #e0e0ee;transition:transform 0.3s;text-decoration:none;color:inherit;display:block;}
+  .article-card:hover{transform:translateY(-4px);}
+  .card-img{height:150px;background-size:cover;background-position:center;background-color:#ede8f5;}
+  .card-body{padding:14px;}
+  .cat-tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.68rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+  .tag-ent{background:var(--pink);color:#fff;}
+  .card-meta{margin-top:10px;padding-top:8px;border-top:1px solid #eee;display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);}
+  .card-meta strong{color:#444;}
+  .article-list{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .article-list-item{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid #e0e0ee;display:flex;gap:16px;text-decoration:none;color:inherit;}
+  .list-img{width:120px;min-height:100px;background-size:cover;background-position:center;background-color:#ede8f5;}
+  .list-body{padding:14px;flex:1;}
+  .list-body h3{font-size:0.92rem;font-weight:800;margin-bottom:6px;}
+  .list-body p{font-size:0.78rem;color:var(--muted);}
+  .meta{font-size:0.7rem;color:#aaa;margin-top:6px;}
+  .error-state{background:#fff5f5;border:1px solid #ffcccc;border-radius:10px;padding:20px;color:#cc3333;font-size:0.85rem;text-align:center;}
+  .section-heading{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .section-heading h2{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:0.05em;}
+  .section-heading .bar{flex:1;height:3px;background:linear-gradient(90deg,var(--pink),transparent);}
+  footer{background:#2A2A3A;padding:30px 24px 16px;margin-top:20px;}
+  .footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#aaa;}
+  @media(max-width:768px){.articles-grid{grid-template-columns:1fr;}.article-list-item{flex-direction:column;}.list-img{width:100%;height:100px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">🔥 TweakLit 🔥🔥</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="entertainment.html" class="active">Entertainment</a></li>
+    <li><a href="sports.html">Sports</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="gossip.html">Gossip</a></li>
+    <li><a href="politics.html">Politics</a></li>
+  </ul>
+  <div class="nav-search">
+    <input type="text" id="globalSearch" placeholder="Search TweakLit…">
+    <button onclick="doSearch()">GO</button>
+  </div>
+</nav>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <h1>Entertainment</h1>
+  <p>Fresh celebrity news, movies, music, and pop culture updates.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-layout">
+  <div class="section-heading">
+    <h2>Latest Stories</h2>
+    <div class="bar"></div>
+  </div>
+  <div class="articles-grid" id="articlesGrid">
+    <div class="article-card"><div class="card-img skeleton"></div><div class="card-body"><div class="skeleton" style="height:20px;width:80%;margin-bottom:8px;"></div><div class="skeleton" style="height:40px;"></div></div></div>
+  </div>
+  
+  <div class="section-heading" style="margin-top:28px">
+    <h2>More Stories</h2>
+    <div class="bar"></div>
+  </div>
+  <div class="article-list" id="moreArticles">
+    <div class="article-list-item"><div class="list-img skeleton"></div><div class="list-body"><div class="skeleton" style="height:20px;width:80%;margin-bottom:8px;"></div><div class="skeleton" style="height:40px;"></div></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <span>© 2025 TweakLit. Made in Uganda 🇺🇬</span>
+    <div class="social-links">
+      <a class="social-btn s-fb" href="#">f</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+      <a class="social-btn s-ig" href="#">📷</a>
+      <a class="social-btn s-wa" href="#">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Entertainment Page - Using Netlify Functions
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function timeAgo(dateStr) {
+  const date = new Date(dateStr);
+  const now = new Date();
+  const seconds = Math.floor((now - date) / 1000);
+  if (seconds < 60) return `${seconds} sec ago`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)} min ago`;
+  if (seconds < 86400) return `${Math.floor(seconds / 3600)} hrs ago`;
+  return `${Math.floor(seconds / 86400)} days ago`;
+}
+
+async function loadEntertainment() {
+  console.log('Loading entertainment news...');
+  
+  const grid = document.getElementById('articlesGrid');
+  const list = document.getElementById('moreArticles');
+  
+  if (!grid) return;
+  
+  try {
+    const response = await fetch('/.netlify/functions/news?category=entertainment');
+    const data = await response.json();
+    const articles = data.articles || [];
+    
+    console.log('✅ Entertainment articles:', articles.length);
+    
+    if (articles.length === 0) {
+      grid.innerHTML = '<div class="error-state">No entertainment news found. Try again later.</div>';
+      return;
+    }
+    
+    grid.innerHTML = articles.slice(0, 6).map(a => `
+      <a class="article-card" href="${a.url}" target="_blank">
+        <div class="card-img" style="background-image:url('${a.urlToImage || ''}');background-size:cover;background-position:center;"></div>
+        <div class="card-body">
+          <span class="cat-tag tag-ent">Entertainment</span>
+          <h3>${escapeHtml(a.title)}</h3>
+          <p>${a.description ? escapeHtml(a.description.substring(0, 100)) + '…' : ''}</p>
+          <div class="card-meta">
+            <strong>${escapeHtml(a.source.name)}</strong>
+            <span>${timeAgo(a.publishedAt)}</span>
+          </div>
+        </div>
+      </a>
+    `).join('');
+    
+    if (list && articles.length > 6) {
+      list.innerHTML = articles.slice(6, 12).map(a => `
+        <a class="article-list-item" href="${a.url}" target="_blank">
+          <div class="list-img" style="background-image:url('${a.urlToImage || ''}');background-size:cover;background-position:center;"></div>
+          <div class="list-body">
+            <span class="cat-tag tag-ent">Entertainment</span>
+            <h3>${escapeHtml(a.title)}</h3>
+            <p>${a.description ? escapeHtml(a.description.substring(0, 80)) + '…' : ''}</p>
+            <div class="meta">${escapeHtml(a.source.name)} · ${timeAgo(a.publishedAt)}</div>
+          </div>
+        </a>
+      `).join('');
+    }
+    
+  } catch (error) {
+    console.error('Error:', error);
+    grid.innerHTML = '<div class="error-state">⚠️ Failed to load entertainment news.</div>';
+  }
+}
+
+function doSearch() {
+  const q = document.getElementById('globalSearch')?.value.trim();
+  if (q) window.location.href = `search.html?q=${encodeURIComponent(q)}`;
+}
+
+loadEntertainment();
+</script>
+</body>
+</html>
